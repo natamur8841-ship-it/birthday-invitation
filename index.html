@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>День Рождения Ольги | 13 ноября 2026</title>
+    <title>День Рождения Анны | 15 октября 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-box: border-box;
         }
 
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --accent-color: #f093fb;
-            --text-dark: #2d3748;
-            --text-light: #718096;
-            --bg-light: #f7fafc;
+            --primary-color: #d4a574;
+            --secondary-color: #8b7355;
+            --accent-color: #e6ccb2;
+            --text-dark: #3d3d3d;
+            --text-light: #7a7a7a;
+            --bg-cream: #f9f6f1;
             --white: #ffffff;
         }
 
@@ -26,10 +27,16 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
+            background: var(--bg-cream);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
         }
 
         /* Навигация */
@@ -39,13 +46,9 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             z-index: 1000;
             transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            padding: 10px 0;
         }
 
         .nav-container {
@@ -59,11 +62,9 @@
 
         .logo {
             font-size: 1.5em;
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--primary-color);
         }
 
         .nav-menu {
@@ -75,28 +76,13 @@
         .nav-menu a {
             text-decoration: none;
             color: var(--text-dark);
-            font-weight: 500;
+            font-weight: 400;
+            font-size: 0.95em;
             transition: color 0.3s;
-            position: relative;
         }
 
         .nav-menu a:hover {
             color: var(--primary-color);
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--primary-color);
-            transition: width 0.3s;
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
         }
 
         .burger {
@@ -107,7 +93,7 @@
 
         .burger div {
             width: 25px;
-            height: 3px;
+            height: 2px;
             background: var(--text-dark);
             margin: 4px;
             transition: all 0.3s;
@@ -116,29 +102,14 @@
         /* Главная секция */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, var(--bg-cream) 0%, #ede7dc 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: var(--text-dark);
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: moveBackground 20s linear infinite;
-        }
-
-        @keyframes moveBackground {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
         }
 
         .hero-content {
@@ -149,54 +120,47 @@
         }
 
         .hero h1 {
-            font-size: 4em;
+            font-size: 5em;
             margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
             animation: fadeInDown 1s ease;
         }
 
         .hero-date {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
             animation: fadeInUp 1s ease 0.3s both;
         }
 
         .hero-subtitle {
-            font-size: 1.3em;
-            opacity: 0.9;
+            font-size: 1.1em;
+            opacity: 0.8;
             margin-bottom: 40px;
+            font-weight: 300;
             animation: fadeInUp 1s ease 0.6s both;
         }
 
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
-            background: white;
-            color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1em;
+            border-radius: 3px;
+            font-weight: 400;
+            font-size: 1em;
             transition: all 0.3s;
             animation: fadeInUp 1s ease 0.9s both;
+            letter-spacing: 1px;
         }
 
         .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator::before {
-            content: '↓';
-            font-size: 2em;
-            color: white;
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         /* Секции */
@@ -207,28 +171,54 @@
         }
 
         section h2 {
-            font-size: 2.5em;
+            font-size: 3.5em;
             text-align: center;
-            margin-bottom: 50px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 60px;
+            font-weight: 300;
+            color: var(--text-dark);
+            letter-spacing: 2px;
+        }
+
+        .section-number {
+            display: block;
+            font-size: 1.2em;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         /* О событии */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
 
         .about-image {
             width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            border-radius: 20px;
+            height: 500px;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transform: rotate(-2deg);
+            transition: transform 0.3s;
+        }
+
+        .about-image:hover {
+            transform: rotate(0deg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .placeholder-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -236,38 +226,62 @@
         }
 
         .about-text h3 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 300;
         }
 
         .about-text p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: var(--text-light);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             line-height: 1.8;
+            font-weight: 300;
         }
 
-        /* Детали события */
+        /* Детали события - падающие карточки */
         .details-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
             margin-top: 50px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .detail-card {
             background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: all 0.3s;
+            padding: 50px 40px;
+            border-radius: 3px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .detail-card:nth-child(1) {
+            transform: rotate(-3deg);
+        }
+
+        .detail-card:nth-child(2) {
+            transform: rotate(2deg);
+            margin-top: 30px;
+        }
+
+        .detail-card:nth-child(3) {
+            transform: rotate(2deg);
+            margin-top: -20px;
+        }
+
+        .detail-card:nth-child(4) {
+            transform: rotate(-2deg);
+            margin-top: 40px;
         }
 
         .detail-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: rotate(0deg) translateY(-10px) !important;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
         }
 
         .detail-icon {
@@ -276,14 +290,17 @@
         }
 
         .detail-card h3 {
-            font-size: 1.3em;
-            margin-bottom: 10px;
+            font-size: 2em;
+            margin-bottom: 15px;
             color: var(--primary-color);
+            font-weight: 400;
         }
 
         .detail-card p {
             color: var(--text-light);
             font-size: 1.1em;
+            line-height: 1.6;
+            font-weight: 300;
         }
 
         /* Программа */
@@ -298,14 +315,14 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 4px;
+            width: 2px;
             height: 100%;
-            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+            background: var(--accent-color);
         }
 
         .timeline-item {
             display: flex;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             position: relative;
         }
 
@@ -320,77 +337,107 @@
         .timeline-content {
             width: 45%;
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 35px;
+            border-radius: 3px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
         }
 
         .timeline-time {
-            font-size: 1.5em;
-            font-weight: bold;
+            font-size: 1.8em;
+            font-weight: 300;
             color: var(--primary-color);
             margin-bottom: 10px;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .timeline-content h4 {
-            font-size: 1.3em;
+            font-size: 1.8em;
             margin-bottom: 10px;
+            font-weight: 400;
         }
 
         .timeline-content p {
             color: var(--text-light);
+            font-weight: 300;
         }
 
         .timeline-dot {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             background: var(--primary-color);
             border: 4px solid white;
             border-radius: 50%;
-            box-shadow: 0 0 0 4px var(--primary-color);
+            box-shadow: 0 0 0 4px var(--accent-color);
         }
 
         /* Место */
         .location-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transform: rotate(2deg);
+            transition: transform 0.3s;
+        }
+
+        .map-container:hover {
+            transform: rotate(0deg);
+        }
+
+        .map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .map-placeholder {
             width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #e0e7ff, #cffafe);
-            border-radius: 20px;
+            height: 100%;
+            background: linear-gradient(135deg, #e8dfd3, #d4c5b3);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4em;
+            font-size: 6em;
         }
 
         .location-info h3 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 300;
         }
 
         .location-details {
-            background: var(--bg-light);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 20px;
+            background: white;
+            padding: 35px;
+            border-radius: 3px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .location-details p {
-            font-size: 1.2em;
-            margin-bottom: 10px;
+            font-size: 1.1em;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 15px;
+            font-weight: 300;
         }
 
         .location-details span {
@@ -400,21 +447,31 @@
         /* Галерея */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
         .gallery-item {
-            height: 300px;
-            border-radius: 15px;
+            height: 350px;
+            border-radius: 3px;
             overflow: hidden;
             position: relative;
             cursor: pointer;
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s;
         }
 
+        .gallery-item:nth-child(1) { transform: rotate(-2deg); }
+        .gallery-item:nth-child(2) { transform: rotate(1deg); margin-top: 20px; }
+        .gallery-item:nth-child(3) { transform: rotate(-1deg); margin-top: -10px; }
+        .gallery-item:nth-child(4) { transform: rotate(2deg); margin-top: 15px; }
+        .gallery-item:nth-child(5) { transform: rotate(-1deg); }
+        .gallery-item:nth-child(6) { transform: rotate(2deg); margin-top: -20px; }
+
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: rotate(0deg) scale(1.05) !important;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            z-index: 10;
         }
 
         .gallery-item img {
@@ -426,18 +483,51 @@
         .gallery-placeholder {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 4em;
+            color: white;
+        }
+
+        /* Инструкция по добавлению фото */
+        .photo-instruction {
+            background: white;
+            padding: 30px;
+            border-radius: 3px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .photo-instruction h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .photo-instruction ol {
+            margin-left: 20px;
+            line-height: 2;
+            color: var(--text-light);
+        }
+
+        .photo-instruction code {
+            background: var(--bg-cream);
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9em;
         }
 
         /* RSVP */
         .rsvp-section {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 80px 30px;
+            padding: 100px 30px;
         }
 
         .rsvp-container {
@@ -447,7 +537,13 @@
 
         .rsvp-section h2 {
             color: white;
-            -webkit-text-fill-color: white;
+        }
+
+        .rsvp-section p {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            font-weight: 300;
         }
 
         .form-group {
@@ -457,8 +553,8 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-size: 1.1em;
-            font-weight: 500;
+            font-size: 1em;
+            font-weight: 400;
         }
 
         .form-group input,
@@ -467,9 +563,10 @@
             width: 100%;
             padding: 15px;
             border: none;
-            border-radius: 10px;
+            border-radius: 3px;
             font-size: 1em;
-            font-family: inherit;
+            font-family: 'Montserrat', sans-serif;
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .form-group textarea {
@@ -483,25 +580,27 @@
             background: white;
             color: var(--primary-color);
             border: none;
-            border-radius: 50px;
-            font-size: 1.2em;
-            font-weight: bold;
+            border-radius: 3px;
+            font-size: 1.1em;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
             margin-top: 20px;
+            letter-spacing: 1px;
         }
 
         .submit-btn:hover {
-            transform: translateY(-3px);
+            background: var(--bg-cream);
+            transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .success-message {
             display: none;
             background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
+            padding: 25px;
+            border-radius: 3px;
+            margin-top: 25px;
             text-align: center;
             font-size: 1.2em;
         }
@@ -516,28 +615,29 @@
             background: var(--text-dark);
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         footer p {
             margin-bottom: 10px;
+            font-weight: 300;
         }
 
         .social-links {
-            margin-top: 20px;
+            margin-top: 25px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
         }
 
         .social-links a {
             color: white;
-            font-size: 2em;
+            font-size: 1.8em;
             transition: color 0.3s;
         }
 
         .social-links a:hover {
-            color: var(--accent-color);
+            color: var(--primary-color);
         }
 
         /* Анимации */
@@ -568,31 +668,8 @@
             to { opacity: 1; }
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translate(-50%, 0); }
-            50% { transform: translate(-50%, -15px); }
-        }
-
-        /* Конфетти */
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: #f0f;
-            position: absolute;
-            animation: fall 3s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
         /* Адаптивность */
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
             .nav-menu {
                 position: fixed;
                 right: -100%;
@@ -615,16 +692,31 @@
             }
 
             .hero h1 {
-                font-size: 2.5em;
-            }
-
-            .hero-date {
-                font-size: 1.5em;
+                font-size: 3em;
             }
 
             .about-content,
             .location-content {
                 grid-template-columns: 1fr;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-card {
+                transform: rotate(0deg) !important;
+                margin-top: 0 !important;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .gallery-item {
+                transform: rotate(0deg) !important;
+                margin-top: 0 !important;
             }
 
             .timeline::before {
@@ -649,7 +741,13 @@
             }
 
             section h2 {
-                font-size: 2em;
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -658,7 +756,7 @@
     <!-- Навигация -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">🎉 Ольга</div>
+            <div class="logo">Анна</div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#hero">Главная</a></li>
                 <li><a href="#about">О событии</a></li>
@@ -679,41 +777,47 @@
     <!-- Главная секция -->
     <section class="hero" id="hero">
         <div class="hero-content">
-            <h1>🎂 День Рождения 🎂</h1>
-            <div class="hero-date">13 ноября 2026</div>
-            <p class="hero-subtitle">Приглашаю тебя отпраздновать<br>мой 35-й День Рождения!</p>
+            <h1>День Рождения</h1>
+            <div class="hero-date">15 октября 2026</div>
+            <p class="hero-subtitle">Приглашаем вас отпраздновать<br>25-летие Анны</p>
             <a href="#rsvp" class="cta-button">Подтвердить присутствие</a>
         </div>
-        <div class="scroll-indicator"></div>
     </section>
 
     <!-- О событии -->
     <section id="about">
+        <span class="section-number">01</span>
         <h2>О событии</h2>
         <div class="about-content">
-            <div class="about-image">🎉</div>
+            <div class="about-image">
+                <!-- Замените на вашу фотографию -->
+                <img src="your-photo.jpg" alt="Фото" style="display: none;">
+                <div class="placeholder-image">📸</div>
+                <!-- Инструкция: загрузите фото, назовите его your-photo.jpg и удалите строку выше -->
+            </div>
             <div class="about-text">
-                <h3>Давайте отпразднуем вместе!</h3>
-                <p>В этом году мне исполняется 35 лет, и я хочу отметить это особенное событие в кругу самых близких и дорогих мне людей.</p>
+                <h3>Давайте отпразднуем вместе</h3>
+                <p>В этом году мне исполняется 25 лет, и я хочу отметить это особенное событие в кругу самых близких и дорогих мне людей.</p>
                 <p>Нас ждет незабываемый вечер, полный радости, смеха, вкусной еды и отличной музыки.</p>
-                <p>Ваше присутствие - самый лучший подарок для меня! 💝</p>
+                <p>Ваше присутствие — самый лучший подарок для меня.</p>
             </div>
         </div>
     </section>
 
     <!-- Детали -->
-    <section id="details" style="background: var(--bg-light);">
+    <section id="details">
+        <span class="section-number">02</span>
         <h2>Детали события</h2>
         <div class="details-grid">
             <div class="detail-card">
                 <div class="detail-icon">📅</div>
                 <h3>Дата</h3>
-                <p>13 ноября 2026 года<br>Пятница</p>
+                <p>15 октября 2026 года<br>Суббота</p>
             </div>
             <div class="detail-card">
                 <div class="detail-icon">⏰</div>
                 <h3>Время</h3>
-                <p>Начало в 18:00<br>Продолжительность до 23:00</p>
+                <p>Начало в 18:00<br>До 23:00</p>
             </div>
             <div class="detail-card">
                 <div class="detail-icon">📍</div>
@@ -723,13 +827,14 @@
             <div class="detail-card">
                 <div class="detail-icon">👗</div>
                 <h3>Дресс-код</h3>
-                <p>Нарядная одежда<br>Светлые тона приветствуются</p>
+                <p>Нарядная одежда<br>Светлые тона</p>
             </div>
         </div>
     </section>
 
     <!-- Программа -->
-    <section id="program">
+    <section id="program" style="background: white; padding: 100px 30px;">
+        <span class="section-number">03</span>
         <h2>Программа вечера</h2>
         <div class="timeline">
             <div class="timeline-item">
@@ -768,10 +873,15 @@
     </section>
 
     <!-- Место проведения -->
-    <section id="location" style="background: var(--bg-light);">
+    <section id="location">
+        <span class="section-number">04</span>
         <h2>Место проведения</h2>
         <div class="location-content">
-            <div class="map-placeholder">🗺️</div>
+            <div class="map-container">
+                <!-- Замените на скриншот карты или используйте Google Maps embed -->
+                <img src="map-screenshot.jpg" alt="Карта" style="display: none;">
+                <div class="map-placeholder">🗺️</div>
+            </div>
             <div class="location-info">
                 <h3>Ресторан "Праздник"</h3>
                 <div class="location-details">
@@ -780,28 +890,67 @@
                     <p><span>🚗</span> Есть парковка для гостей</p>
                     <p><span>📞</span> +7 (495) 123-45-67</p>
                 </div>
-                <a href="https://maps.google.com" target="_blank" class="cta-button" style="background: var(--primary-color); color: white; margin-top: 20px;">Построить маршрут</a>
+                <a href="https://maps.google.com" target="_blank" class="cta-button">Построить маршрут</a>
             </div>
         </div>
     </section>
 
     <!-- Галерея -->
-    <section id="gallery">
+    <section id="gallery" style="background: white; padding: 100px 30px;">
+        <span class="section-number">05</span>
         <h2>Воспоминания</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <div class="gallery-placeholder">📸</div>
+                <!-- Замените на ваши фотографии -->
+                <img src="photo1.jpg" alt="Фото 1" style="display: none;">
+                <div class="gallery-placeholder">1</div>
             </div>
+            <div class="gallery-item">
+                <img src="photo2.jpg" alt="Фото 2" style="display: none;">
+                <div class="gallery-placeholder">2</div>
+            </div>
+            <div class="gallery-item">
+                <img src="photo3.jpg" alt="Фото 3" style="display: none;">
+                <div class="gallery-placeholder">3</div>
+            </div>
+            <div class="gallery-item">
+                <img src="photo4.jpg" alt="Фото 4" style="display: none;">
+                <div class="gallery-placeholder">4</div>
+            </div>
+            <div class="gallery-item">
+                <img src="photo5.jpg" alt="Фото 5" style="display: none;">
+                <div class="gallery-placeholder">5</div>
+            </div>
+            <div class="gallery-item">
+                <img src="photo6.jpg" alt="Фото 6" style="display: none;">
+                <div class="gallery-placeholder">6</div>
+            </div>
+        </div>
+
+        <!-- Инструкция по добавлению фотографий -->
+        <div class="photo-instruction">
+            <h3>📸 Как добавить свои фотографии:</h3>
+            <ol>
+                <li>Подготовьте 6-7 фотографий в формате JPG или PNG</li>
+                <li>Назовите их: <code>photo1.jpg</code>, <code>photo2.jpg</code>, <code>photo3.jpg</code> и т.д.</li>
+                <li>Загрузите фото в тот же репозиторий GitHub, где лежит этот HTML-файл</li>
+                <li>В HTML найдите строки типа: <code>&lt;img src="photo1.jpg" alt="Фото 1" style="display: none;"&gt;</code></li>
+                <li>Удалите <code>style="display: none;"</code> из этих строк</li>
+                <li>Удалите строки с <code>&lt;div class="gallery-placeholder"&gt;</code></li>
+                <li>Сохраните и загрузите изменения в GitHub</li>
+            </ol>
+            <p style="margin-top: 20px; color: var(--text-light); font-style: italic;">
+                Совет: используйте квадратные фотографии для лучшего отображения
+            </p>
         </div>
     </section>
 
     <!-- RSVP -->
     <section class="rsvp-section" id="rsvp">
         <div class="rsvp-container">
+            <span class="section-number" style="color: rgba(255,255,255,0.7);">06</span>
             <h2>Подтвердите присутствие</h2>
-            <p style="text-align: center; margin-bottom: 30px; font-size: 1.1em;">
-                Пожалуйста, ответьте до 1 ноября 2026 года
-            </p>
+            <p>Пожалуйста, ответьте до 1 октября 2026 года</p>
             <form id="rsvpForm">
                 <div class="form-group">
                     <label>Ваше имя *</label>
@@ -830,34 +979,34 @@
                 </div>
                 <div class="form-group">
                     <label>Пожелания или комментарии</label>
-                    <textarea name="message" placeholder="Особые пожелания, диетические ограничения и т.д."></textarea>
+                    <textarea name="message" placeholder="Особые пожелания, диетические ограничения"></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Отправить ответ</button>
             </form>
             <div class="success-message" id="successMessage">
-                ✨ Спасибо за ответ! Жду тебя на празднике! ✨
+                ✨ Спасибо за ваш ответ! Ждем вас на празднике! ✨
             </div>
         </div>
     </section>
 
     <!-- Футер -->
     <footer>
-        <p>💜 С любовью, Ольга 💜</p>
-      <p>По всем вопросам: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" 
-                               data-cfemail="d8b9b6b6b998bda0b9b5a8b4bdf6bbb7b5">[olya.patshina.91@mail.ru]</a></p>
-   <p style="margin-top: 30px; opacity: 0.7; font-size: 0.9em;">
-       © 2026 | Создано с любовью
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.5em;">С любовью, Анна</p>
+        <p>По всем вопросам: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e687888887a6839e878b968a83c885898b">[email&#160;protected]</a></p>
+        <div class="social-links">
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="Telegram">✈️</a>
+            <a href="#" title="VK">✉️</a>
+        </div>
+        <p style="margin-top: 30px; opacity: 0.5; font-size: 0.9em;">
+            © 2026
         </p>
     </footer>
-
-    <!-- Контейнер для конфетти -->
-    <div id="confetti-container"></div>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Навигация
         const burger = document.getElementById('burger');
         const navMenu = document.getElementById('navMenu');
-        const navbar = document.getElementById('navbar');
 
         burger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -869,39 +1018,6 @@
                 navMenu.classList.remove('active');
             });
         });
-
-        // Изменение навбара при скролле
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Создание конфетти
-        function createConfetti() {
-            const container = document.getElementById('confetti-container');
-            const colors = ['#ff6b6b', '#4ecdc4', '#ffe66d', '#95e1d3', '#ff85a2', '#a8e6cf', '#f093fb'];
-            
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.animationDelay = Math.random() * 3 + 's';
-                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-                container.appendChild(confetti);
-            }
-
-            // Удаляем конфетти через 5 секунд
-            setTimeout(() => {
-                container.innerHTML = '';
-            }, 5000);
-        }
-
-        // Запускаем конфетти при загрузке
-        window.addEventListener('load', createConfetti);
 
         // Обработка формы RSVP
         document.getElementById('rsvpForm').addEventListener('submit', function(e) {
@@ -920,9 +1036,6 @@
             document.getElementById('successMessage').classList.add('show');
             this.reset();
 
-            // Создаем конфетти
-            createConfetti();
-
             // Скрываем сообщение через 5 секунд
             setTimeout(() => {
                 document.getElementById('successMessage').classList.remove('show');
@@ -938,7 +1051,8 @@
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    entry.target.style.opacity = '0';
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
                 }
             });
         }, observerOptions);
